@@ -142,7 +142,8 @@ const App = () => {
       if(window.confirm(`${newName.trim()} is already added to the phonebook, replace the old number with a new one?`)){
         //const personForUpdate = persons.find(n => n.name.trim().toLowerCase() ===newName.trim().toLowerCase )  
         const newPerson =  objectToUpdate
-        console.log(objectToUpdate.id)
+        console.log('personObject',personObject)
+        console.log('objectToUpdate.id',objectToUpdate.id)
         personService
           .update(objectToUpdate.id, personObject)
           .then(returnedPersonObject => {
