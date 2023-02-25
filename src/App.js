@@ -143,7 +143,7 @@ const App = () => {
         //const personForUpdate = persons.find(n => n.name.trim().toLowerCase() ===newName.trim().toLowerCase )  
         const newPerson =  objectToUpdate
         personService
-          .update(newPerson.id, personObject)
+          .update(objectToUpdate.id, personObject)
           .then(returnedPersonObject => {
             //console.log(returnedPersonObject.name,returnedPersonObject.number)
             setPersons(persons.map(person => person.id !== newPerson.id ? person : returnedPersonObject))
@@ -205,7 +205,6 @@ const App = () => {
       ._delete(person.id)
       
       .then(response => {
-        console.log(response.name)
         const updatedPersons = persons.filter((entry) => entry.id !== person.id);
         setPersons(updatedPersons);
       })
